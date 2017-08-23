@@ -3,7 +3,7 @@
         "src/**/*.ts",
         "src/**/*.spec.ts"
     ],
-    "outDir": "dist",
+    "outDir": "./dist",
     "compilerOptions": {
         "noImplicitAny": true,
         "target": "es5"
