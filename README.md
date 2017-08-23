@@ -2,6 +2,7 @@
   
 # `mume-cli`: A CLI that compiles your enhanced Markdown
   
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2ccea841a4647a9bf46dfcddf4dc438 )](https://www.codacy.com/app/solarliner/mume-cli?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SolarLiner/mume-cli&amp;utm_campaign=Badge_Grade)
   
 ## Preface
   
@@ -25,18 +26,4 @@ Warning: This will be subject to change.
 ### Content of the help page
   
   
-
-<pre class="language-text">usage: mume-cli [-h] [-v] [-c COMPILER] [-m MATH_ENGINE]
-
-A CLI that packages mume - allowing you to process your Markdown-enhanced 
-files from any editor.
-
-Optional arguments:
-  -h, --help            Show this help message and exit.
-  -v, --version         Show program's version number and exit.
-  -c COMPILER, --compiler COMPILER
-                        Select compiler to render with (default: remarkable).
-  -m MATH_ENGINE, --math-engine MATH_ENGINE
-                        Sets math engine (default: KeTeX).
-</pre>
   

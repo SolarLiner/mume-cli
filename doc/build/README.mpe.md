@@ -8,6 +8,7 @@ export_on_save:
 ---
 
 # `mume-cli`: A CLI that compiles your enhanced Markdown
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2ccea841a4647a9bf46dfcddf4dc438)](https://www.codacy.com/app/solarliner/mume-cli?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SolarLiner/mume-cli&amp;utm_campaign=Badge_Grade)
 
 ## Preface
 
