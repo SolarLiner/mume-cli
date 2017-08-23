@@ -4,6 +4,8 @@
   "description": "A CLI that packages mume - allowing you to process your Markdown-enhanced files from any editor.",
   "main": "dist/main.js",
   "scripts": {
+    "build": "gulp compile",
+    "build:watch": "gulp watch",
     "test": "mocha",
     "clean": "rm dist/*js."
   },
