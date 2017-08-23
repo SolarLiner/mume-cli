@@ -19,6 +19,6 @@ parser.addArgument(['file'], {
     metavar: 'FILE',
     nargs: '+',
     help: 'File(s) to convert.'
-})
+});
 
 console.log(parser.parseArgs());

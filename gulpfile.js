@@ -6,7 +6,7 @@ gulp.task("compile", () => {
     return tsProject.src()
         .pipe(tsProject())
         .js.pipe(gulp.dest("./dist"));
-})
+});
 
 gulp.task('watch', ['compile'], function() {
     gulp.watch('src/**/*.ts', ['compile']);
