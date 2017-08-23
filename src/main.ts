@@ -1,19 +1,24 @@
 import { ArgumentParser } from "argparse";
-import { name, version, description } from "pjson";
+import * as pjson from "pjson";
+
 
 let parser = new ArgumentParser({
-    version: version,
-    prog: name,
-    description: description
+    version: pjson.version,
+    prog: pjson.name,
+    description: pjson.description
 });
 
 parser.addArgument(['-c', '--compiler'], {
-    help: "Select compiler to render with (default: remarkable).",
-    defaultValue: 'remarkable'
+    help: "Select compiler to render with (default: html).",
+    defaultValue: 'html'
 });
 parser.addArgument(['-m', '--math-engine'], {
     help: "Sets math engine (default: KeTeX).",
     defaultValue: "KeTeX"
+});
+parser.addArgument(['--project-dir-path'], {
+    help: "Sets the project directory root (default: current directory)",
+    defaultValue: process.cwd()
 });
 parser.addArgument(['file'], {
     metavar: 'FILE',
@@ -21,4 +26,4 @@ parser.addArgument(['file'], {
     help: 'File(s) to convert.'
 });
 
-console.log(parser.parseArgs());
+let args = parser.parseArgs();
