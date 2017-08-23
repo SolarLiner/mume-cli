@@ -11,6 +11,7 @@
 		* [Why such a program?](#why-such-a-program )
 	* [Using `mume-cli`](#using-mume-cli )
 		* [Content of the help page](#content-of-the-help-page )
+	* [Project roadmap](#project-roadmap )
   
 ## Preface
   
@@ -34,4 +35,20 @@ Warning: This will be subject to change.
 ### Content of the help page
   
   
+  
+## Project roadmap
+  
+  
+```todo
+Implementing CLI:
+    ☐ Populating arguments
+    ☐ Linking arguments to internal modules
+  
+Implementing compilers:
+    ☐ Use default settings
+    ☐ Implement overrides (links to arguments)
+        ☐ Pandoc
+        ☐ Remarkable
+        ☐ LaTeX
+```  
   
