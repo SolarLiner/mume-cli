@@ -1,4 +1,5 @@
 import { ArgumentParser } from "argparse";
+import { MarkdownCompiler } from "./compilers";
 import * as pjson from "pjson";
 
 
@@ -13,17 +14,30 @@ parser.addArgument(['-c', '--compiler'], {
     defaultValue: 'html'
 });
 parser.addArgument(['-m', '--math-engine'], {
-    help: "Sets math engine (default: KeTeX).",
+    help: "Sets math engine (default: KeTeX). WARNING: Unimplemented.",
     defaultValue: "KeTeX"
 });
 parser.addArgument(['--project-dir-path'], {
     help: "Sets the project directory root (default: current directory)",
     defaultValue: process.cwd()
 });
-parser.addArgument(['file'], {
+parser.addArgument(['files'], {
     metavar: 'FILE',
     nargs: '+',
     help: 'File(s) to convert.'
 });
 
 let args = parser.parseArgs();
+
+
+let compiler = new MarkdownCompiler(args.projectDirPath, {}, args.compiler);
+compiler.htmlExportConfig = {
+    runAllCodeChunks: true,
+    offline: true
+}
+compiler.pandocExportConfig = {
+    runAllCodeChecks: true,
+    openFileAfterGeneration: false
+}
+
+compiler.compile(args.files);
