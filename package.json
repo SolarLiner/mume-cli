@@ -1,0 +1,35 @@
+{
+  "name": "mume-cli",
+  "version": "0.0.1",
+  "description": "A CLI that packages mume - allowing you to process your Markdown-enhanced files from any editor.",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolarLiner/mume-cli.git"
+  },
+  "keywords": [
+    "markdown",
+    "mume",
+    "compile",
+    "pdf"
+  ],
+  "author": "SolarLiner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SolarLiner/mume-cli/issues"
+  },
+  "homepage": "https://github.com/SolarLiner/mume-cli#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.2",
+    "mocha": "^3.5.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "argparser": "^0.2.2"
+  }
+}
