@@ -4,7 +4,8 @@
   "description": "A CLI that packages mume - allowing you to process your Markdown-enhanced files from any editor.",
   "main": "dist/main.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "clean": "rm dist/*js."
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "typescript": "^2.4.2"
   },
   "dependencies": {
+    "@shd101wyy/mume": "^0.2.1",
     "argparser": "^0.2.2"
   }
 }
