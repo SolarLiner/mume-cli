@@ -4,6 +4,14 @@
   
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2ccea841a4647a9bf46dfcddf4dc438 )](https://www.codacy.com/app/solarliner/mume-cli?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SolarLiner/mume-cli&amp;utm_campaign=Badge_Grade)
   
+  
+* [`mume-cli`: A CLI that compiles your enhanced Markdown](#mume-cli-a-cli-that-compiles-your-enhanced-markdown )
+	* [Preface](#preface )
+		* [What is `mume`?](#what-is-mume )
+		* [Why such a program?](#why-such-a-program )
+	* [Using `mume-cli`](#using-mume-cli )
+		* [Content of the help page](#content-of-the-help-page )
+  
 ## Preface
   
   
