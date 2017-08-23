@@ -1,6 +1,6 @@
 ---
 markdown:
-    image_dir: /.github/img
+    image_dir: ../../.github/img
     path: ../../README.md
     absolute_image_path: false
 export_on_save: 
