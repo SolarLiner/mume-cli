@@ -11,6 +11,9 @@
             "program": "${workspaceRoot}/dist/main.js",
             "outFiles": [
                 "${workspaceRoot}/out/**/*.js"
+            ],
+            "args": [
+                "README.md"
             ]
         }
     ]
