@@ -15,5 +15,10 @@ parser.addArgument(['-m', '--math-engine'], {
     help: "Sets math engine (default: KeTeX).",
     defaultValue: "KeTeX"
 });
+parser.addArgument(['file'], {
+    metavar: 'FILE',
+    nargs: '+',
+    help: 'File(s) to convert.'
+})
 
 console.log(parser.parseArgs());
