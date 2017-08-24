@@ -10,15 +10,15 @@ export class MarkdownCompiler {
         runAllCodeChecks: boolean
     }
     
-    constructor(public projectDir?: string, public config?: mume.MarkdownEngineConfig, public compiler?: string) {
+    constructor(public projectDir?: string, public config?: mume.MarkdownEngineConfig) {
         mume.init()
         .catch((err) => {
             throw err;
         });
     };
 
-    private compile_single(file: string, engine: mume.MarkdownEngine): Promise<string> {
-        switch (this.compiler) {
+    private compile_single(file: string, engine: mume.MarkdownEngine, renderer: string): Promise<string> {
+        switch (renderer) {
             case "html":
             default:
                 return engine.htmlExport(this.htmlExportConfig);
@@ -28,7 +28,7 @@ export class MarkdownCompiler {
         }
     }
 
-    public compile(files: string[]) {
+    public compile(files: string[], renderers: string[]) {
         files.forEach((value) => {
             let engine = new mume.MarkdownEngine({
                 filePath: value,
@@ -37,10 +37,12 @@ export class MarkdownCompiler {
             });
             console.log(`Exporting ${value}...`);
 
-            this.compile_single(value, engine).then((value: string) => {
-                console.log("Done. "+value);
-            }, (reason: any) => {
-                console.log("Error: Couldn't process file: "+reason);
+            renderers.forEach((renderer) => {
+                this.compile_single(value, engine, renderer).then((value: string) => {
+                    console.log("Done. "+value);
+                }, (reason: any) => {
+                    console.log("Error: Couldn't process file: "+reason);
+                });
             });
         });
     }
