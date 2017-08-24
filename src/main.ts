@@ -41,4 +41,4 @@ compiler.pandocExportConfig = {
     openFileAfterGeneration: false
 }
 
-compiler.compile(args.files);
+compiler.compile(args.files, args.compilers);
