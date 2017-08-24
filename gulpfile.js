@@ -7,6 +7,7 @@ gulp.task("compile", () => {
     return tsProject.src()
         .pipe(sourcemaps.init())
         .pipe(tsProject())
+        .pipe(sourcemaps.write())
         .js.pipe(gulp.dest("./dist"));
 });
 
