@@ -1,4 +1,4 @@
-var gulp= require('gulp');
+var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var tsProject = ts.createProject("tsconfig.json");
@@ -11,5 +11,5 @@ gulp.task("compile", () => {
 });
 
 gulp.task('watch', ['compile'], function() {
-    gulp.watch('src/**/*.ts', ['compile']);
+    return gulp.watch('src/**/*.ts', ['compile']);
 });
