@@ -33,13 +33,13 @@ export class MarkdownCompiler {
         switch (renderer) {
             case "html":
             default:
-                return engine.htmlExport(this.htmlExportConfig);
+                return engine.htmlExport({offline: true, runAllCodeChunks: true});
 
-                case "md":
-                return engine.markdownExport()
+            case "md":
+                return engine.markdownExport({runAllCodeChunks: true});
 
             case "pandoc":
-                return engine.pandocExport(this.pandocExportConfig);
+                return engine.pandocExport({openFileAfterGeneration: false, runAllCodeChunks: true});
 
             case "all":
                 const regex = /---((.|\r?\n)*)---/gmi;
@@ -52,7 +52,7 @@ export class MarkdownCompiler {
 
                     let markdownFile = data.toString();
                     let matches = regex.exec(markdownFile);
-                    let cliMatter: MumeCliFrontMatter = yaml.parse(matches[1]);
+                    let cliMatter: MumeCliFrontMatter = yaml.parse(matches[1])['cli-exports'];
 
                     let promise: Promise<string>;
                     if(cliMatter.ebook)
@@ -61,7 +61,7 @@ export class MarkdownCompiler {
                         promise = this.compile_single(file, engine, 'html');
                     if(cliMatter.markdown)
                         promise = this.compile_single(file, engine, 'md');
-                    if(cliMatter.phantomjs) {
+                    if(cliMatter.phantomjs !== undefined) {
                         if(cliMatter.phantomjs.jpg)
                             promise = this.compile_single(file, engine, 'pjs-jpg');
                         if(cliMatter.phantomjs.pdf)
@@ -69,13 +69,11 @@ export class MarkdownCompiler {
                         if(cliMatter.phantomjs.png)
                             promise = this.compile_single(file, engine, 'pjs-png');
                     }
+
+                    return promise;
                 });
                 break;
         }
-
-        return new Promise<string>((resolve, reject) => {
-            reject(new Error('This code should not be reached'));
-        })
     }
 
     public compile(files: string[], renderers: string[]) {
