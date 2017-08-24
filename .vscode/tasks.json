@@ -7,14 +7,14 @@
             "type": "gulp",
             "task": "watch",
             "problemMatcher": [
-                "$tsc-watch"
+                "$gulp-tsc"
             ]
         },
         {
             "type": "gulp",
             "task": "compile",
             "problemMatcher": [
-                "$tsc"
+                "$gulp-tsc"
             ],
             "identifier": "gulp:compile"
         }
