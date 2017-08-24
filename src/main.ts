@@ -1,6 +1,7 @@
 import { ArgumentParser } from "argparse";
 import { MarkdownCompiler } from "./compilers";
 import * as pjson from "pjson";
+import * as process from "process";
 
 
 let parser = new ArgumentParser({
