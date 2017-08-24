@@ -14,7 +14,9 @@
                 "${workspaceRoot}/out/**/*.js"
             ],
             "args": [
-                "tests/test.md"
+                "tests/test.md",
+                "-r",
+                "pandoc html"
             ]
         }
     ]
