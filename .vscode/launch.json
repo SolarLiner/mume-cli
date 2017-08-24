@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "name": "Launch Program",
             "program": "${workspaceRoot}/dist/main.js",
             "outFiles": [
@@ -16,8 +16,9 @@
             "args": [
                 "tests/test.md",
                 "-r",
-                "pandoc html"
-            ]
+                "all"
+            ],
+            "preLaunchTask": "gulp:compile"
         }
     ]
 }
