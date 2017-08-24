@@ -21,14 +21,6 @@ interface MumeCliFrontMatter {
 }
 
 export class MarkdownCompiler {
-    htmlExportConfig: {
-        runAllCodeChunks: boolean,
-        offline: boolean
-    }
-    pandocExportConfig: {
-        openFileAfterGeneration: boolean,
-        runAllCodeChecks: boolean
-    }
 
     constructor(public projectDir?: string, public config?: mume.MarkdownEngineConfig) {
         mume.init()
@@ -42,6 +34,9 @@ export class MarkdownCompiler {
             case "html":
             default:
                 return engine.htmlExport(this.htmlExportConfig);
+
+                case "md":
+                return engine.markdownExport()
 
             case "pandoc":
                 return engine.pandocExport(this.pandocExportConfig);

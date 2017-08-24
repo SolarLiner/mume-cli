@@ -29,13 +29,5 @@ let args = parser.parseArgs();
 
 
 let compiler = new MarkdownCompiler(args.projectDirPath, {});
-compiler.htmlExportConfig = {
-    runAllCodeChunks: true,
-    offline: true
-}
-compiler.pandocExportConfig = {
-    runAllCodeChecks: true,
-    openFileAfterGeneration: false
-}
 
 compiler.compile(args.files, args.renderers);
