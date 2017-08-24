@@ -3,6 +3,13 @@ html:
     embed_local_images: true
     embed_svg: true
     toc: true
+title: Lorem
+author: ipsum
+date: 1300 B.C.
+output:
+    pdf_document:
+        toc: true
+        highlight: tango
 ---
 
 # Lorem ipsum
