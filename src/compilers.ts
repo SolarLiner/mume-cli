@@ -29,19 +29,19 @@ export class MarkdownCompiler {
     }
 
     public compile(files: string[], renderers: string[]) {
-        files.forEach((value) => {
+        files.forEach((file) => {
             let engine = new mume.MarkdownEngine({
-                filePath: value,
+                filePath: file,
                 config: this.config || undefined,
                 projectDirectoryPath: this.projectDir
             });
-            console.log(`Exporting ${value}...`);
+            console.log(`Exporting ${file}...`);
 
             renderers.forEach((renderer) => {
-                this.compile_single(value, engine, renderer).then((value: string) => {
-                    console.log("Done. "+value);
+                this.compile_single(file, engine, renderer).then((value: string) => {
+                    console.log(` - ${renderer} -> ${file}\n\t${value}`);
                 }, (reason: any) => {
-                    console.log("Error: Couldn't process file: "+reason);
+                    console.log(`- ${renderer} error: ${reason}`);
                 });
             });
         });
