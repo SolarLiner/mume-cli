@@ -6,6 +6,12 @@
     "compilerOptions": {
         "noImplicitAny": true,
         "target": "es5",
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "sourceMap": true,
+        "rootDir": "src",
+        "rootDirs": [
+            "src",
+            "src/**"
+        ]
     }
 }

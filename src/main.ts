@@ -1,24 +1,44 @@
 import { ArgumentParser } from "argparse";
-import { name, version, description } from "pjson";
+import { MarkdownCompiler } from "./compilers";
+import * as pjson from "pjson";
+
 
 let parser = new ArgumentParser({
-    version: version,
-    prog: name,
-    description: description
+    version: pjson.version,
+    prog: pjson.name,
+    description: pjson.description
 });
 
-parser.addArgument(['-c', '--compiler'], {
-    help: "Select compiler to render with (default: remarkable).",
-    defaultValue: 'remarkable'
+parser.addArgument(['-r', '--renderers'], {
+    help: "Format(s) to render (default: html).",
+    nargs: '+',
+    defaultValue: 'html'
 });
 parser.addArgument(['-m', '--math-engine'], {
-    help: "Sets math engine (default: KeTeX).",
+    help: "Sets math engine (default: KeTeX). WARNING: Unimplemented.",
     defaultValue: "KeTeX"
 });
-parser.addArgument(['file'], {
+parser.addArgument(['--project-dir-path'], {
+    help: "Sets the project directory root (default: current directory)",
+    defaultValue: process.cwd()
+});
+parser.addArgument(['files'], {
     metavar: 'FILE',
     nargs: '+',
     help: 'File(s) to convert.'
 });
 
-console.log(parser.parseArgs());
+let args = parser.parseArgs();
+
+
+let compiler = new MarkdownCompiler(args.projectDirPath, {});
+compiler.htmlExportConfig = {
+    runAllCodeChunks: true,
+    offline: true
+}
+compiler.pandocExportConfig = {
+    runAllCodeChecks: true,
+    openFileAfterGeneration: false
+}
+
+compiler.compile(args.files, args.compilers);
