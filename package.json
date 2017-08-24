@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@shd101wyy/mume": "^0.2.1",
+    "@types/node": "^8.0.24",
     "argparser": "^0.2.2",
     "pjson": "^1.0.8",
     "yamljs": "^0.3.0"
