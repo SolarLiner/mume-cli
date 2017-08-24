@@ -15,7 +15,8 @@
             "task": "compile",
             "problemMatcher": [
                 "$tsc"
-            ]
+            ],
+            "identifier": "gulp:compile"
         }
     ]
 }
