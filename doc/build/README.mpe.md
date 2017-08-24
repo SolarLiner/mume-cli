@@ -30,7 +30,7 @@ Warning: This will be subject to change.
 ### Content of the help page
 
 ```bash {cmd=true, hide=true}
-node ../../dist/main.js -h
+node ../../. -h
 ```
 
 ## Project roadmap
