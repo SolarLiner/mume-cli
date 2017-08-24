@@ -29,6 +29,7 @@
     "@types/argparse": "^1.0.31",
     "chai": "^4.1.1",
     "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-typescript": "^3.2.2",
     "mocha": "^3.5.0",
     "typescript": "^2.4.2"
