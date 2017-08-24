@@ -11,13 +11,9 @@ let parser = new ArgumentParser({
 });
 
 parser.addArgument(['-r', '--renderers'], {
-    help: "Format(s) to render (default: html).",
+    help: "Format(s) to render (default: markdown).",
     nargs: '+',
-    defaultValue: 'html'
-});
-parser.addArgument(['-m', '--math-engine'], {
-    help: "Sets math engine (default: KeTeX). WARNING: Unimplemented.",
-    defaultValue: "KeTeX"
+    defaultValue: 'markdown'
 });
 parser.addArgument(['--project-dir-path'], {
     help: "Sets the project directory root (default: current directory)",
