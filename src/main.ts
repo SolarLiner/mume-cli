@@ -9,7 +9,7 @@ let parser = new ArgumentParser({
     description: pjson.description
 });
 
-parser.addArgument(['-r', '--render'], {
+parser.addArgument(['-r', '--renderers'], {
     help: "Format(s) to render (default: html).",
     nargs: '+',
     defaultValue: 'html'
@@ -31,7 +31,7 @@ parser.addArgument(['files'], {
 let args = parser.parseArgs();
 
 
-let compiler = new MarkdownCompiler(args.projectDirPath, {}, args.compiler);
+let compiler = new MarkdownCompiler(args.projectDirPath, {});
 compiler.htmlExportConfig = {
     runAllCodeChunks: true,
     offline: true
