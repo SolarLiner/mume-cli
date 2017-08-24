@@ -9,8 +9,9 @@ let parser = new ArgumentParser({
     description: pjson.description
 });
 
-parser.addArgument(['-c', '--compiler'], {
-    help: "Select compiler to render with (default: html).",
+parser.addArgument(['-r', '--render'], {
+    help: "Format(s) to render (default: html).",
+    nargs: '+',
     defaultValue: 'html'
 });
 parser.addArgument(['-m', '--math-engine'], {
