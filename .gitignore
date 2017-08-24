@@ -62,3 +62,4 @@ dist/*
 
 # TODO lists on root dir, irrelevant for other people
 *.todo
+tests/test.html
