@@ -10,6 +10,11 @@ output:
     pdf_document:
         toc: true
         highlight: tango
+cli-exports:
+    html: true
+    phantomjs:
+        pdf: true
+        png: true
 ---
 
 # Lorem ipsum
