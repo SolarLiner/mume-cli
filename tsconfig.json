@@ -4,8 +4,12 @@
         "src/**/*.spec.ts"
     ],
     "compilerOptions": {
+        "module": "commonjs",
         "noImplicitAny": true,
-        "target": "es5",
+        "target": "es6",
+        "lib": [
+            "es6"
+        ],
         "outDir": "./dist",
         "sourceMap": true,
         "rootDir": "src",
