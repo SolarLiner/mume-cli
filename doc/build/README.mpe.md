@@ -5,6 +5,11 @@ markdown:
     absolute_image_path: false
 export_on_save: 
     markdown: true
+cli-export:
+    markdown: true
+    epub: true
+    phantomjs: 
+        pdf: true
 ---
 
 # `mume-cli`: A CLI that compiles your enhanced Markdown
